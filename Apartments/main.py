@@ -6,18 +6,16 @@ apartments.sort()
 applicants.sort()
 
 result = 0
-ii = 0
-jj = 0
-for i in range(ii, len(applicants)):
-    for j in range(jj, len(apartments)):
-        if abs(apartments[j] - applicants[i]) <= k:
-            result += 1
-            jj = j + 1
-            break
-        elif apartments[j] - applicants[i] > k:
-            ii = i
-            jj = j
-            break
-
+i = 0
+j = 0
+while i < len(applicants) and j < len(apartments):
+    if abs(apartments[j] - applicants[i]) <= k:
+        result += 1
+        i += 1
+        j += 1
+    elif apartments[j] - applicants[i] > k:
+        i += 1
+    else:
+        j += 1
 
 print(result)
