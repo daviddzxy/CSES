@@ -1,3 +1,5 @@
+# Use PyPy instead of CPython to pass the tests
+
 from operator import itemgetter
 import sys
 
